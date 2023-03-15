@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd "$HOME"/.wallpapers/ || exit 1
+
+wallpapers_array=(*.jpg)
+
+items_count="${#wallpapers_array[@]}"
+
+while true; do
+
+    random_index=$((RANDOM % items_count))
+
+    next_wallpaper="${wallpapers_array[$random_index]}"
+
+    hsetroot -cover "$next_wallpaper"
+
+    sleep 300
+
+done
