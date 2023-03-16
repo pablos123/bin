@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-unset -v type
+type=dark_souls
 unset -v name
 unset -v change
 
@@ -13,13 +13,6 @@ while getopts t:n:c: o
             *) echo "Usage: set_wallpaper -t '<type(folder inside \$HOME/.wallpaper)>' -n '<name of a particular wallpaper>' -c '<change over time>'" && exit 1
         esac
 done
-
-
-if [[ -z "$type" ]]; then
-    echo "You must declare a type!"
-    echo "Usage: set_wallpaper -t '<type(folder inside \$HOME/.wallpaper)>' -n '<name of a particular wallpaper>' -c '<change over time>'"
-    exit 1
-fi
 
 wallpapers_folder="$HOME/.wallpapers/$type/"
 
