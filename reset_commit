@@ -3,12 +3,12 @@
 unset -v branch
 unset -v message
 
-while getopts b:m: p
+while getopts b:m: o
     do
-        case "${p}" in
+        case "${o}" in
             b) branch="${OPTARG}";;
             m) message="${OPTARG}";;
-            *) echo "Usage: reset_commit -b '<name_of_the_branch_to_push_to>' -m '<commit_message>'"
+            *) echo "Usage: reset_commit -b '<name_of_the_branch_to_push_to>' -m '<commit_message>'" && exit 1
         esac
 done
 
