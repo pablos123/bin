@@ -1,3 +1,6 @@
-scrot /tmp/lockerscreenshot.png
+#!/bin/bash
+#
+scrot -o /tmp/lockerscreenshot.png
 convert -blur 0x20 /tmp/lockerscreenshot.png /tmp/lockerscreenshot_blur.png
+rm -f /tmp/lockerscreenshot.png
 i3lock --no-unlock-indicator --nofork -i /tmp/lockerscreenshot_blur.png
