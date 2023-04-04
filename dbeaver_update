@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget -O /tmp/dbeaver_latest.deb https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+sudo apt deb /tmp/dbeaver_latest.deb
