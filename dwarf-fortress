@@ -1,3 +1,4 @@
 #!/bin/bash
 #
-wine "$HOME/.df/Dwarf Fortress.exe"
+cd "$HOME/.df" || exit 1
+wine "Dwarf Fortress.exe"
