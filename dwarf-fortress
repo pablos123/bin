@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+cd "$HOME/.df" || exit 1
+wine "Dwarf Fortress.exe"
