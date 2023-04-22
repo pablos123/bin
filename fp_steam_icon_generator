@@ -4,7 +4,7 @@ black_list="Proton|proton|Linux"
 
 find_icon ()
 {
-    for dir in "256x256" "128x128" "16x16" "96x96" "64x64" "48x48" "32x32" "24x24"; do
+    for dir in "256x256" "128x128" "96x96" "64x64" "48x48" "32x32" "24x24" "16x16"; do
         icon_path="$HOME/.var/app/com.valvesoftware.Steam/data/icons/hicolor/$dir/apps/$1.png"
         if [[ -e "$icon_path" ]]; then break; fi
     done
@@ -20,7 +20,7 @@ for file in "$HOME/.var/app/com.valvesoftware.Steam/Desktop/"*.desktop; do
         echo "$game_name already exists..."
         continue
     fi
-    read -p "Want to create icon for '$game_name'? (Y/N): " confirm && [[ $confirm == [yY] ]] || continue
+    read -p "Create icon for '$game_name'? (Y/N): " confirm && [[ $confirm == [yY] ]] || continue
 
     file_data=$(cat "$file")
 
