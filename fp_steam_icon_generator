@@ -12,14 +12,13 @@ find_icon ()
 
 for file in "$HOME/.var/app/com.valvesoftware.Steam/Desktop/"*.desktop; do
     game_name=$(echo "$file" | sed 's/.*\/\(.*\).desktop$/\1/')
-    if [[ $game_name =~ $black_list ]]; then
-        continue
-    fi
+    if [[ $game_name =~ $black_list ]]; then continue; fi
 
     if [[ -f "$HOME/Desktop/$game_name.desktop" ]]; then
         echo "$game_name already exists..."
         continue
     fi
+
     read -p "Create icon for '$game_name'? (Y/N): " confirm && [[ $confirm == [yY] ]] || continue
 
     file_data=$(cat "$file")
